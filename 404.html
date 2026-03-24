@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><title>ModelScript IDE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: #0d1117; color: #c9d1d9; display: flex; align-items: center; justify-content: center; height: 100vh; }
+  .container { text-align: center; max-width: 600px; }
+  h1 { font-size: 2.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #58a6ff, #bc8cff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  p { margin-bottom: 2rem; opacity: 0.7; }
+  input { width: 100%; padding: 14px 20px; border-radius: 8px; border: 1px solid #30363d; background: #161b22; color: #c9d1d9; font-size: 16px; outline: none; }
+  input:focus { border-color: #58a6ff; }
+  .examples { margin-top: 1.5rem; text-align: left; }
+  .examples a { color: #58a6ff; text-decoration: none; display: block; padding: 8px 0; }
+  .examples a:hover { text-decoration: underline; }
+</style>
+</head><body>
+<div class="container">
+  <h1>ModelScript IDE</h1>
+  <p>Open any GitHub repository with Modelica support</p>
+  <form onsubmit="event.preventDefault(); go();">
+    <input id="url" type="text" placeholder="Enter a GitHub repository URL, e.g. owner/repo" autofocus />
+  </form>
+  <div class="examples">
+    <a href="/vscode/workbench/#modelscript/modelscript">modelscript/modelscript</a>
+    <a href="/vscode/workbench/#OpenModelica/OpenModelica">OpenModelica/OpenModelica</a>
+  </div>
+</div>
+<script>
+  function go() {
+    var url = document.getElementById('url').value.trim();
+    url = url.replace(/^https?:\/\//, '').replace(/^github\.com\//, '');
+    window.location.href = '/vscode/workbench/#' + url;
+  }
+</script>
+</body></html>

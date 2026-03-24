@@ -1,0 +1,186 @@
+{
+  "name": "vscode",
+  "displayName": "ModelScript",
+  "version": "0.0.0",
+  "description": "Modelica language support — syntax highlighting, completions, hover, diagnostics, formatting, and bundled MSL",
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Formatters"
+  ],
+  "keywords": [
+    "modelica",
+    "simulation",
+    "modeling",
+    "MSL",
+    "systems engineering"
+  ],
+  "homepage": "https://modelscript.org",
+  "bugs": {
+    "url": "https://github.com/modelscript/modelscript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modelscript/modelscript.git",
+    "directory": "packages/vscode"
+  },
+  "license": "AGPL-3.0-or-later",
+  "qna": "marketplace",
+  "publisher": "modelscript",
+  "browser": "./dist/browserClientMain",
+  "scripts": {
+    "build": "webpack --mode production --devtool hidden-source-map",
+    "compile": "webpack",
+    "dev": "webpack --watch",
+    "lint": "eslint src --ext ts",
+    "package": "npx @vscode/vsce package --no-dependencies",
+    "test-web": "npm run compile && vscode-test-web --browserType=chromium --quality stable --port 3100 --testRunnerDataDir=$HOME/.vscode-test-web --extensionDevelopmentPath=. ./test-data",
+    "watch": "webpack --watch"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "modelscript.openDiagram",
+        "title": "ModelScript: Open Diagram",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "modelscript.openDiagramSource",
+        "title": "ModelScript: Open Source",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "modelscript.runSimulation",
+        "title": "ModelScript: Run Simulation",
+        "icon": "$(play)"
+      },
+      {
+        "command": "modelscript.addToDiagram",
+        "title": "ModelScript: Add to Diagram",
+        "icon": "$(add)"
+      }
+    ],
+    "configuration": [
+      {
+        "id": "modelscript",
+        "title": "ModelScript",
+        "properties": {
+          "modelscript.trace.server": {
+            "type": "string",
+            "scope": "window",
+            "enum": [
+              "off",
+              "messages",
+              "verbose"
+            ],
+            "default": "verbose",
+            "description": "Traces the communication between VS Code and the ModelScript language server."
+          }
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "modelica",
+        "scopeName": "source.modelica",
+        "path": "./syntaxes/modelica.tmLanguage.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "modelica",
+        "aliases": [
+          "Modelica",
+          "modelica"
+        ],
+        "extensions": [
+          ".mo"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/icon.png",
+          "dark": "./images/icon.png"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "modelscript.openDiagram",
+          "when": "editorLangId == modelica",
+          "group": "navigation"
+        },
+        {
+          "command": "modelscript.runSimulation",
+          "when": "editorLangId == modelica",
+          "group": "navigation"
+        },
+        {
+          "command": "modelscript.openDiagramSource",
+          "when": "activeWebviewPanelId == modelscript.diagram",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "modelscript.addToDiagram",
+          "when": "view == modelscript.libraryTree && viewItem =~ /^(model|block|connector)$/",
+          "group": "inline"
+        },
+        {
+          "command": "modelscript.addToDiagram",
+          "when": "view == modelscript.libraryTree && viewItem =~ /^(model|block|connector)$/",
+          "group": "navigation"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "modelscript.libraryTree",
+          "name": "Modelica Libraries",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "modelscript.libraryTree",
+        "contents": "Open a Modelica file to browse libraries."
+      }
+    ]
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "dependencies": {
+    "@antv/layout": "^0.3.25",
+    "@antv/x6": "^3.1.7",
+    "@antv/x6-plugin-selection": "^2.2.2",
+    "@modelscript/lsp": "0.0.0",
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/vscode": "^1.100.0",
+    "@vscode/test-web": "^0.0.80",
+    "@vscode/vsce": "^3.7.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "eslint": "^9.13.0",
+    "path-browserify": "^1.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0d1b2a",
+    "theme": "dark"
+  }
+}
