@@ -30,7 +30,7 @@
 		<style id="vscode-css-modules" type="text/css" media="screen"></style>
 	<script>
 (function() {
-  // Parse URL hash for repo: #owner/repo, #owner/repo@ref, or #blank
+  // Parse URL hash for repo: #owner/repo, #owner/repo@ref, or #memfs
   var hash = location.hash.slice(1);
   if (!hash) hash = 'modelscript/modelscript';
   var el = document.getElementById('vscode-workbench-web-configuration');
@@ -42,10 +42,10 @@
     { scheme: scheme, authority: host, path: '/static/devextensions' },
     { scheme: scheme, authority: host, path: '/static/extensions/github-fs' },
   ];
-  if (hash === 'blank') {
-    // Blank project: use in-memory blank filesystem
+  if (hash.startsWith('memfs')) {
+    var template = hash.split(':')[1] || 'empty';
     document.title = 'New Project — ModelScript IDE';
-    config.folderUri = { scheme: 'blank', authority: '', path: '/project', query: '' };
+    config.folderUri = { scheme: 'memfs', authority: '', path: '/' + template };
   } else {
     var parts = hash.split('@');
     var ownerRepo = parts[0];
@@ -57,6 +57,15 @@
     config.folderUri.path = '/' + owner + '/' + repo;
     config.folderUri.query = 'ref=' + ref;
   }
+  
+  // Use localhost subdomains for the extension host and webview iframes.
+  // Chrome resolves *.localhost to 127.0.0.1, so our Express server handles them.
+  // This avoids PNA blocks (public CDN origin -> private localhost fetch).
+  var endpoint = location.protocol + '//{{uuid}}.' + location.host + '/vscode-static';
+  config.productConfiguration = config.productConfiguration || {};
+  config.productConfiguration.webEndpointUrlTemplate = endpoint;
+  config.productConfiguration.webviewContentExternalBaseUrlTemplate = endpoint + '/out/vs/workbench/contrib/webview/browser/pre/';
+  
   el.setAttribute('data-settings', JSON.stringify(config));
 })();
 </script>
