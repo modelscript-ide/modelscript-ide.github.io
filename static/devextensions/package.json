@@ -1,5 +1,5 @@
 {
-  "name": "vscode",
+  "name": "modelscript",
   "displayName": "ModelScript",
   "version": "0.0.0",
   "description": "Modelica language support — syntax highlighting, completions, hover, diagnostics, formatting, and bundled MSL",
@@ -238,7 +238,7 @@
     "@antv/layout": "^0.3.25",
     "@antv/x6": "^3.1.7",
     "@antv/x6-plugin-selection": "^2.2.2",
-    "@modelscript/lsp": "0.0.0",
+    "@modelscript/lsp": "*",
     "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
