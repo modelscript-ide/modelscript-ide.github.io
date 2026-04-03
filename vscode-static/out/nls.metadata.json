@@ -5906,7 +5906,6 @@
 			"menuBarVisibility",
 			"menuBarVisibility.mac",
 			"mergeWindow",
-			"modalMinWidth",
 			"mouseBackForwardToNavigate",
 			{
 				"key": "navigationControlEnabled",
@@ -7080,6 +7079,8 @@
 			"chatContext.attachScreenshot.labelWeb",
 			"chatContext.debugEventsSnapshot",
 			"chatContext.editors",
+			"chatContext.sessions",
+			"chatContext.sessions.placeholder",
 			"chatContext.tools",
 			"chatContext.tools.placeholder",
 			"imageFromClipboard",
@@ -7107,6 +7108,7 @@
 		"vs/workbench/contrib/chat/browser/actions/chatCopyActions": [
 			"chat.copyKatexMathSource.label",
 			"interactive.copyAll.label",
+			"interactive.copyFinalResponse.label",
 			"interactive.copyItem.label"
 		],
 		"vs/workbench/contrib/chat/browser/actions/chatDeveloperActions": [
@@ -7308,6 +7310,28 @@
 			"newUntitledFile",
 			"selectOption"
 		],
+		"vs/workbench/contrib/chat/browser/actions/createPluginAction": [
+			"agents",
+			"chat.createPlugin",
+			"createPluginTitle",
+			"hooks",
+			"instructions",
+			"mcpServers",
+			"pluginCreated",
+			"pluginCreateError",
+			"pluginExists",
+			"pluginNameConsecutive",
+			"pluginNameInvalid",
+			"pluginNamePrompt",
+			"pluginNameRequired",
+			"pluginNameTooLong",
+			"prompts",
+			"selectFolder",
+			"selectPluginLocation",
+			"selectResources",
+			"showAll",
+			"skills"
+		],
 		"vs/workbench/contrib/chat/browser/agentPluginActions": [
 			"disable",
 			"disableForWorkspace",
@@ -7426,7 +7450,6 @@
 			"unarchive",
 			"unarchiveSection",
 			"unarchiveSectionSessions.confirm",
-			"unarchiveSectionSessions.confirmSingle",
 			"unarchiveSectionSessions.unarchive",
 			"unpin"
 		],
@@ -7472,10 +7495,16 @@
 			"agentSessions.noRepository",
 			"agentSessions.olderSection",
 			"agentSessions.pinnedSection",
+			"agentSessions.showLess",
+			"agentSessions.showMore",
+			"agentSessions.showMoreCompact",
 			"agentSessions.todaySection",
 			"agentSessions.weekSection",
 			"agentSessions.yesterdaySection",
-			"agentSessionSectionAriaLabel",
+			"agentSessionSectionAriaLabel.plural",
+			"agentSessionSectionAriaLabel.singular",
+			"agentSessionShowLessAriaLabel",
+			"agentSessionShowMoreAriaLabel",
 			"allowAction",
 			"allowActionOnce",
 			"chat.session.status.failed",
@@ -7592,6 +7621,7 @@
 			"alwaysAddedTooltip",
 			"builtinGroup",
 			"builtinGroupDescription",
+			"builtinSource",
 			"collapsed",
 			"contextInstructionsGroup",
 			"contextInstructionsGroupDescription",
@@ -7606,6 +7636,7 @@
 			"expanded",
 			"extensionGroup",
 			"extensionGroupDescription",
+			"fromExtension",
 			"fromPlugin",
 			"groupAriaLabel",
 			"hook",
@@ -7630,6 +7661,7 @@
 			"onContextTooltip",
 			"onDemandInstructionsGroup",
 			"onDemandInstructionsGroupDescription",
+			"otherGroup",
 			"pluginGroup",
 			"pluginGroupDescription",
 			"prompt",
@@ -7638,6 +7670,7 @@
 			"skill",
 			"skillsDescription",
 			"tryDifferentSearch",
+			"uiIntegrationBadge",
 			"userGroup",
 			"userGroupDescription",
 			"workspaceGroup",
@@ -7645,6 +7678,7 @@
 		],
 		"vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationManagement": [
 			"aiCustomizationManagementEditorFocused",
+			"aiCustomizationManagementHarness",
 			"aiCustomizationManagementSection"
 		],
 		"vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationManagement.contribution": [
@@ -7782,6 +7816,8 @@
 			"browseToAdd",
 			"byPublisher",
 			"collapsed",
+			"createPlugin",
+			"createPluginTooltip",
 			"disabled",
 			"disabledGroup",
 			"disabledGroupDescription",
@@ -7833,6 +7869,8 @@
 			"chat.imageAttachmentHover",
 			"chat.imageAttachmentPreviewFeaturesDisabled",
 			"chat.imageAttachmentWarning",
+			"chat.imageLimitExceededAttachment",
+			"chat.imageLimitExceededHover",
 			"chat.instructionsAttachment",
 			"chat.NotebookImageAttachment",
 			"chat.omittedFileAttachment",
@@ -7910,6 +7948,7 @@
 			"chat.agent.thinkingMode.fixedScrolling",
 			"chat.agent.thinkingStyle",
 			"chat.agentHost.enabled",
+			"chat.agentHost.ipcLogging",
 			"chat.agentLocations.invalidPath",
 			"chat.agents.config.locations.description",
 			"chat.agents.config.locations.title",
@@ -7924,6 +7963,13 @@
 			"chat.aiCustomizationMenu.enabled",
 			"chat.allowAnonymousAccess",
 			"chat.artifacts.enabled",
+			"chat.artifacts.mode",
+			"chat.artifacts.rules.byFilePath",
+			"chat.artifacts.rules.byFilePath.groupName",
+			"chat.artifacts.rules.byFilePath.onlyShowGroup",
+			"chat.artifacts.rules.byMimeType",
+			"chat.artifacts.rules.groupName",
+			"chat.artifacts.rules.onlyShowGroup",
 			"chat.autopilot.enabled",
 			"chat.autoReply.description",
 			"chat.checkpoints.enabled",
@@ -7931,6 +7977,7 @@
 			"chat.codeBlock.showProgressAnimation.description",
 			"chat.contextUsage.enabled",
 			"chat.customizations.harnessSelector.enabled",
+			"chat.customizations.providerApi.enabled",
 			"chat.detectParticipant.enabled",
 			"chat.disableAIFeatures",
 			"chat.editing.autoAcceptDelay",
@@ -8013,6 +8060,7 @@
 			"chat.sendElementsToChat.attachCSS",
 			"chat.sendElementsToChat.attachImages",
 			"chat.sendElementsToChat.enabled",
+			"chat.signInTitleBar",
 			"chat.statusWidget.anonymous.description",
 			"chat.subagents.allowInvocationsFromSubagents",
 			"chat.subagents.allowInvocationsFromSubagents.md",
@@ -8321,6 +8369,8 @@
 			"chat.restoreCheckpoint.none",
 			"chat.restoreCheckpoint.tooltip",
 			"chat.restoreLastCheckpoint.label",
+			"chat.startOver.label",
+			"chat.startOver.tooltip",
 			"chat.undoEdits.label",
 			"chatEditing.allChanges.title",
 			"chatEditing.snapshot",
@@ -8576,13 +8626,15 @@
 			"chat.repoInfo.enabled",
 			"chatRepoInfoConfigurationTitle"
 		],
+		"vs/workbench/contrib/chat/browser/chatSessions/chatSessionDescription": [
+			"chat.sessions.description.thinking",
+			"chat.sessions.description.waitingForConfirmation"
+		],
 		"vs/workbench/contrib/chat/browser/chatSessions/chatSessionPickerActionItem": [
 			"chat.sessionPicker.label"
 		],
 		"vs/workbench/contrib/chat/browser/chatSessions/chatSessions.contribution": [
 			"chat",
-			"chat.sessions.description.thinking",
-			"chat.sessions.description.waitingForConfirmation",
 			"chatCommand",
 			"chatCommandDescription",
 			"chatCommandsDescription",
@@ -8613,6 +8665,7 @@
 			"chatSessionsExtPoint.supportsSourceControlAttachments",
 			"chatSessionsExtPoint.supportsSymbolAttachments",
 			"chatSessionsExtPoint.supportsToolAttachments",
+			"chatSessionsExtPoint.useRequestToPopulateBuiltInPickers",
 			"chatSessionsExtPoint.welcomeMessage",
 			"chatSessionsExtPoint.welcomeTips",
 			"chatSessionsExtPoint.welcomeTitle",
@@ -8647,6 +8700,7 @@
 			"retry",
 			"review",
 			"setupErrorDialog",
+			"signInIndicatorTitleBarAction",
 			"triggerChatSetup",
 			"triggerChatSetupFromAccounts"
 		],
@@ -8822,7 +8876,8 @@
 			"completionsSnoozedStatus",
 			"copilotDisabledStatus",
 			"finishSetup",
-			"notSignedIn"
+			"notSignedIn",
+			"signIn"
 		],
 		"vs/workbench/contrib/chat/browser/chatTipCatalog": [
 			"tip.agenticBrowser",
@@ -8895,6 +8950,7 @@
 			"noPluginsFound",
 			"pluginDirInvalid",
 			"pluginDirNotFound",
+			"pluginNotFound",
 			"pluginSourceNotFound",
 			"selectPlugin",
 			"showOutput",
@@ -9078,7 +9134,6 @@
 			"rename",
 			"runInChat",
 			"searching",
-			"separator.builtin",
 			"separator.extensions",
 			"separator.organization",
 			"separator.plugins",
@@ -9247,9 +9302,13 @@
 			"viewExtensionLabel"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatArtifactsWidget": [
-			"chat.artifacts.carousel",
+			"chat.artifacts.clearButton",
 			"chat.artifacts.count",
-			"chat.artifacts.one"
+			"chat.artifacts.group.aria",
+			"chat.artifacts.one",
+			"chat.artifacts.save",
+			"chat.artifacts.saveDialog.title",
+			"chat.artifacts.widget.aria"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/chatAgentCommandContentPart": [
 			"rerun"
@@ -9437,14 +9496,19 @@
 			"editsSummary"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/chatThinkingContentPart": [
+			"chat.thinking.deletions",
+			"chat.thinking.deletions.one",
 			"chat.thinking.editedFile",
 			"chat.thinking.editingFile",
 			"chat.thinking.editingFiles",
 			"chat.thinking.finished",
-			"chat.thinking.finished.withSteps",
+			"chat.thinking.finished.withStepsPlural",
+			"chat.thinking.finished.withStepsSingular",
 			"chat.thinking.header",
 			"chat.thinking.header.initial",
 			"chat.thinking.header.working",
+			"chat.thinking.insertions",
+			"chat.thinking.insertions.one",
 			"chat.thinking.label",
 			"chat.thinking.shimmer",
 			"chat.thinking.started",
@@ -9456,6 +9520,7 @@
 			"chat.thinking.thinking.3",
 			"chat.thinking.thinking.4",
 			"chat.thinking.thinking.5",
+			"chat.thinking.titleWithDiff",
 			"chat.thinking.tool.1",
 			"chat.thinking.tool.2",
 			"chat.thinking.tool.3",
@@ -9531,6 +9596,10 @@
 			"loadingMcpApp",
 			"mcpAppError",
 			"retry"
+		],
+		"vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatMissingSandboxDepsConfirmationSubPart": [
+			"missingDeps.cancel",
+			"missingDeps.install"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatModifiedFilesConfirmationSubPart": [
 			"manyFilesChanged",
@@ -9632,22 +9701,13 @@
 			"chat.questionCarouselSignalOne",
 			"chatConfirmationAction",
 			"checkpointRestore",
-			"didNotFollowInstructions",
 			"hook.thinking.blocked",
 			"hook.thinking.blockedGeneric",
 			"hook.thinking.warning",
 			"hook.thinking.warningGeneric",
-			"incompleteCode",
-			"incorrectCode",
-			"missingContext",
-			"offensiveOrUnsafe",
-			"other",
-			"poorlyWrittenOrFormatted",
 			"queuedDivider",
 			"queuedDividerTooltip",
-			"refusedAValidRequest",
 			"renderFailMsg",
-			"reportIssue",
 			"requestMarkdownPartTitle",
 			"steeringDivider",
 			"steeringDividerTooltip",
@@ -9747,6 +9807,7 @@
 			"mcp.prompt.error",
 			"mcp.prompt.image",
 			"mcp.prompt.resource",
+			"session.description",
 			"tool_source_completion"
 		],
 		"vs/workbench/contrib/chat/browser/widget/input/editor/chatInputEditorContrib": [
@@ -9800,7 +9861,8 @@
 			"permissions.default",
 			"permissions.default.description",
 			"permissions.default.label",
-			"permissions.default.subtext"
+			"permissions.default.subtext",
+			"permissions.learnMore"
 		],
 		"vs/workbench/contrib/chat/browser/widget/input/sessionTargetPickerActionItem": [
 			"chat.learnMoreAgentTypes",
@@ -9882,6 +9944,7 @@
 			"chatEditingHasToolConfirmation",
 			"chatEditingSentRequest",
 			"chatExtensionInvalid",
+			"chatFirstRequest",
 			"chatForegroundSessionCount",
 			"chatHasAgents",
 			"chatHasCanDelegateProviders",
@@ -10024,6 +10087,18 @@
 			"newChat",
 			"reportIssue"
 		],
+		"vs/workbench/contrib/chat/common/plugins/agentPluginServiceImpl": [
+			"chatPlugins",
+			"chatPlugins.property.path",
+			"chatPlugins.property.when",
+			"chatPlugins.schema.description",
+			"chatPluginsPath",
+			"chatPluginsWhen",
+			"extension.plugin.invalid.path",
+			"extension.plugin.invalid.when",
+			"extension.plugin.missing.path",
+			"uninstallExtensionForPlugin"
+		],
 		"vs/workbench/contrib/chat/common/promptSyntax/chatPromptFilesContribution": [
 			"chatAgents",
 			"chatContribution.property.description",
@@ -10160,7 +10235,6 @@
 			"promptHeader.agent.target",
 			"promptHeader.agent.tools",
 			"promptHeader.agent.userInvocable",
-			"promptHeader.agent.userInvokable",
 			"promptHeader.instructions.applyToRange",
 			"promptHeader.instructions.description",
 			"promptHeader.instructions.excludeAgent",
@@ -10178,8 +10252,7 @@
 			"promptHeader.skill.license",
 			"promptHeader.skill.metadata",
 			"promptHeader.skill.name",
-			"promptHeader.skill.userInvocable",
-			"promptHeader.skill.userInvokable"
+			"promptHeader.skill.userInvocable"
 		],
 		"vs/workbench/contrib/chat/common/promptSyntax/languageProviders/promptHeaderAutocompletion": [
 			"promptHeaderAutocompletion.addHeader",
@@ -10287,6 +10360,7 @@
 			"promptValidator.agentNotFound",
 			"promptValidator.agentsMustBeArray",
 			"promptValidator.agentsRequiresAgentTool",
+			"promptValidator.agentsRequiresConfig",
 			"promptValidator.applyToMustBeString",
 			"promptValidator.applyToMustBeValidGlob",
 			"promptValidator.argumentHintMustBeString",
@@ -10333,6 +10407,7 @@
 			"promptValidator.hookValueMustBeArray",
 			"promptValidator.ignoredAttribute.vscode-agent",
 			"promptValidator.inferDeprecated",
+			"promptValidator.inferRequiresConfig",
 			"promptValidator.invalidFileReference",
 			"promptValidator.invalidPermissionValue",
 			"promptValidator.missingHandoffProperties",
@@ -10378,12 +10453,10 @@
 			"promptValidator.unknownMatcherProperty",
 			"promptValidator.unknownPermissionScope",
 			"promptValidator.unknownVariableReference",
-			"promptValidator.userInvocableMustBeBoolean",
-			"promptValidator.userInvokableDeprecated"
+			"promptValidator.userInvocableMustBeBoolean"
 		],
 		"vs/workbench/contrib/chat/common/promptSyntax/service/promptsServiceImpl": [
 			"extension.with.id",
-			"internal.builtIn",
 			"plugin.capitalized",
 			"promptsService.loadAgents",
 			"promptsService.loadHooks",
@@ -14090,11 +14163,18 @@
 			"openImagesInCarousel"
 		],
 		"vs/workbench/contrib/imageCarousel/browser/imageCarouselEditor": [
+			"imageCarousel.ariaLabel",
 			"imageCarousel.counter",
+			"imageCarousel.kindImage",
+			"imageCarousel.kindVideo",
 			"imageCarousel.nextImage",
 			"imageCarousel.noImages",
 			"imageCarousel.previousImage",
-			"imageCarousel.thumbnailLabel"
+			"imageCarousel.statusWithCaption",
+			"imageCarousel.statusWithName",
+			"imageCarousel.thumbnailLabelImage",
+			"imageCarousel.thumbnailLabelVideo",
+			"imageCarousel.thumbnails"
 		],
 		"vs/workbench/contrib/inlayHints/browser/inlayHintsAccessibilty": [
 			"description",
@@ -19001,7 +19081,6 @@
 			"terminal.integrated.env.osx",
 			"terminal.integrated.env.windows",
 			"terminal.integrated.environmentChangesRelaunch",
-			"terminal.integrated.experimental.aiProfileGrouping",
 			"terminal.integrated.fastScrollSensitivity",
 			"terminal.integrated.focusAfterRun",
 			"terminal.integrated.focusAfterRun.accessible-buffer",
@@ -19324,10 +19403,21 @@
 			"runInTerminal.invocation.background",
 			"runInTerminal.invocation.sandbox",
 			"runInTerminal.invocation.sandbox.background",
+			"runInTerminal.missingDeps.cancel",
+			"runInTerminal.missingDeps.cancelled",
+			"runInTerminal.missingDeps.failed",
+			"runInTerminal.missingDeps.install",
+			"runInTerminal.missingDeps.message",
+			"runInTerminal.missingDeps.title",
+			"runInTerminal.missingDeps.unknown",
 			"runInTerminal.presentationOverride",
 			"runInTerminal.presentationOverride.background",
 			"runInTerminal.presentationOverride.background.inDirectory",
+			"runInTerminal.presentationOverride.background.inDirectory.withoutLanguage",
+			"runInTerminal.presentationOverride.background.withoutLanguage",
 			"runInTerminal.presentationOverride.inDirectory",
+			"runInTerminal.presentationOverride.inDirectory.withoutLanguage",
+			"runInTerminal.presentationOverride.withoutLanguage",
 			"runInTerminal.streaming",
 			"runInTerminal.streaming.background",
 			"runInTerminal.streaming.default",
@@ -19381,6 +19471,23 @@
 			"copilotChat.taskFailedWithExitCode"
 		],
 		"vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalChatAgentToolsConfiguration": [
+			"agentSandbox.enabledSetting",
+			"agentSandbox.linuxFileSystemSetting",
+			"agentSandbox.linuxFileSystemSetting.allowWrite",
+			"agentSandbox.linuxFileSystemSetting.denyRead",
+			"agentSandbox.linuxFileSystemSetting.denyWrite",
+			"agentSandbox.macFileSystemSetting",
+			"agentSandbox.macFileSystemSetting.allowWrite",
+			"agentSandbox.macFileSystemSetting.denyRead",
+			"agentSandbox.macFileSystemSetting.denyWrite",
+			"agentSandbox.networkSetting.allowedDomains",
+			"agentSandbox.networkSetting.deniedDomains",
+			"agentSandboxEnabled.deprecated",
+			"agentSandboxLinuxFileSystem.deprecated",
+			"agentSandboxMacFileSystem.deprecated",
+			"agentSandboxNetwork.deprecated",
+			"agentSandboxNetworkAllowedDomains.deprecated",
+			"agentSandboxNetworkDeniedDomains.deprecated",
 			"autoApprove.defaults",
 			"autoApprove.deprecated",
 			"autoApprove.description.commandLine",
@@ -19429,23 +19536,13 @@
 			"terminalChatAgentProfile.linux",
 			"terminalChatAgentProfile.osx",
 			"terminalChatAgentProfile.path",
-			"terminalChatAgentProfile.windows",
-			"terminalSandbox.enabledSetting",
-			"terminalSandbox.linuxFileSystemSetting",
-			"terminalSandbox.linuxFileSystemSetting.allowWrite",
-			"terminalSandbox.linuxFileSystemSetting.denyRead",
-			"terminalSandbox.linuxFileSystemSetting.denyWrite",
-			"terminalSandbox.macFileSystemSetting",
-			"terminalSandbox.macFileSystemSetting.allowWrite",
-			"terminalSandbox.macFileSystemSetting.denyRead",
-			"terminalSandbox.macFileSystemSetting.denyWrite",
-			"terminalSandbox.networkSetting.allowedDomains",
-			"terminalSandbox.networkSetting.allowTrustedDomains",
-			"terminalSandbox.networkSetting.deniedDomains",
-			"terminalSandboxNetwork.deprecated"
+			"terminalChatAgentProfile.windows"
 		],
 		"vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalSandboxService": [
-			"deleteFilesInSandboxTempDir"
+			"deleteFilesInSandboxTempDir",
+			"runInTerminal.missingDeps.focusTerminal",
+			"runInTerminal.missingDeps.passwordPromptMessage",
+			"runInTerminal.missingDeps.passwordPromptTitle"
 		],
 		"vs/workbench/contrib/terminalContrib/clipboard/browser/terminal.clipboard.contribution": [
 			"workbench.action.terminal.copyAndClearSelection",
@@ -21687,8 +21784,11 @@
 			"menus.artifactGroupContext",
 			"menus.changeTitle",
 			"menus.chatContextUsageActions",
+			"menus.chatCustomizationsCreate",
 			"menus.chatEditingSessionApplySubmenu",
 			"menus.chatEditingSessionChangesToolbar",
+			"menus.chatEditingSessionChangeToolbar",
+			"menus.chatEditingSessionTitleToolbar",
 			"menus.chatEditorInlineGutter",
 			"menus.chatMultiDiffContext",
 			"menus.chatNewSession",
@@ -21913,6 +22013,7 @@
 			"learnMore",
 			"ok",
 			"plan.businessName",
+			"plan.eduName",
 			"plan.enterpriseName",
 			"plan.freeName",
 			"plan.proName",
@@ -22800,7 +22901,13 @@
 		],
 		"vs/workbench/services/themes/browser/workbenchThemeService": [
 			"error.cannotloadtheme",
-			"newDefaultTheme",
+			"noThanks",
+			{
+				"key": "themeUpdatedNotification",
+				"comment": [
+					"{0} is the name of the new default theme"
+				]
+			},
 			"tryNewTheme"
 		],
 		"vs/workbench/services/themes/common/colorExtensionPoint": [
@@ -27942,7 +28049,6 @@
 			"Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and a single press of the Alt key will show it. A setting of 'compact' will move the menu into the side bar.",
 			"Control the visibility of the menu bar. A setting of 'toggle' means that the menu bar is hidden and executing `Focus Application Menu` will show it. A setting of 'compact' will move the menu into the side bar.",
 			"Configure an interval in seconds during which the last entry in local file history is replaced with the entry that is being added. This helps reduce the overall number of entries that are added, for example when auto save is enabled. This setting is only applied to entries that have the same source of origin. Changing this setting has no effect on existing local file history entries.",
-			"Controls the minimum width of modal editor overlays in pixels.",
 			"Enables the use of mouse buttons four and five for commands 'Go Back' and 'Go Forward'.",
 			"Controls whether the navigation control is shown in the custom title bar. This setting only has an effect when {0} is not set to {1}.",
 			"Controls whether the navigation control in the title bar is shown.",
@@ -29021,6 +29127,8 @@
 			"Screenshot",
 			"Debug Events Snapshot",
 			"Open Editors",
+			"Sessions...",
+			"Select a session",
 			"Tools...",
 			"Select a tool",
 			"Image from Clipboard",
@@ -29048,6 +29156,7 @@
 		"vs/workbench/contrib/chat/browser/actions/chatCopyActions": [
 			"Copy Math Source",
 			"Copy All",
+			"Copy Final Response",
 			"Copy"
 		],
 		"vs/workbench/contrib/chat/browser/actions/chatDeveloperActions": [
@@ -29249,6 +29358,28 @@
 			"New untitled editor",
 			"Select where to apply the code block"
 		],
+		"vs/workbench/contrib/chat/browser/actions/createPluginAction": [
+			"Agents",
+			"Create Plugin",
+			"Create Plugin",
+			"Hooks",
+			"Instructions",
+			"MCP Servers",
+			"Plugin '{0}' created successfully.",
+			"Failed to create plugin: {0}",
+			"A directory named '{0}' already exists at this location. Please choose a different name or location.",
+			"Plugin name must not contain consecutive hyphens or periods.",
+			"Plugin name must contain only lowercase alphanumeric characters, hyphens, and periods, and must start and end with an alphanumeric character.",
+			"Enter a name for the plugin",
+			"Plugin name is required.",
+			"Plugin name must be at most 64 characters.",
+			"Prompts",
+			"Select Folder",
+			"Select Plugin Save Location",
+			"Select resources to include in the plugin",
+			"Show Built-in, Extension, and Plugin Resources",
+			"Skills"
+		],
 		"vs/workbench/contrib/chat/browser/agentPluginActions": [
 			"Disable",
 			"Disable (Workspace)",
@@ -29324,7 +29455,7 @@
 			"Archive",
 			"Are you sure you want to archive {0} agent sessions?",
 			"Are you sure you want to archive 1 agent session?",
-			"You can unarchive sessions later if needed from the Chat view.",
+			"You can unarchive sessions later if needed from the sessions view.",
 			"Archive All",
 			"Archive All",
 			"Are you sure you want to archive {0} agent sessions from '{1}'?",
@@ -29367,7 +29498,6 @@
 			"Unarchive",
 			"Unarchive All",
 			"Are you sure you want to unarchive {0} agent sessions?",
-			"Are you sure you want to unarchive 1 agent session?",
 			"Unarchive All",
 			"Unpin"
 		],
@@ -29413,10 +29543,16 @@
 			"Other",
 			"Older",
 			"Pinned",
+			"Show less",
+			"Show {0} More...",
+			"+{0} more",
 			"Today",
 			"Last 7 days",
 			"Yesterday",
 			"{0} sessions section, {1} sessions",
+			"{0} sessions section, {1} session",
+			"Show less sessions",
+			"Show {0} more sessions",
 			"Allow",
 			"Allow once",
 			"Failed",
@@ -29533,6 +29669,7 @@
 			"This instruction is automatically included in every interaction.",
 			"Built-in",
 			"Built-in customizations shipped with the application.",
+			"Built-in",
 			"collapsed",
 			"Included Based on Context",
 			"Instructions automatically loaded when matching files are part of the context.",
@@ -29547,6 +29684,7 @@
 			"expanded",
 			"Extensions",
 			"Read-only customizations provided by installed extensions.",
+			"Extension: {0}",
 			"Plugin: {0}",
 			"{0}, {1} items, {2}",
 			"Hook",
@@ -29571,6 +29709,7 @@
 			"This instruction is automatically included when files matching '{0}' are in context.",
 			"Loaded on Demand",
 			"Instructions loaded only when explicitly referenced.",
+			"Other",
 			"Plugins",
 			"Read-only customizations provided by installed plugins.",
 			"Prompt",
@@ -29579,6 +29718,7 @@
 			"Skill",
 			"Folders of instructions, scripts, and resources that Copilot loads when relevant to perform specialized tasks.",
 			"Try a different search term",
+			"UI Integration",
 			"User",
 			"Customizations stored locally on your machine in a central location. Private to you and available across all projects.",
 			"Workspace",
@@ -29586,6 +29726,7 @@
 		],
 		"vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationManagement": [
 			"Whether the Chat Customizations editor is focused",
+			"The active harness (session type) in the Chat Customizations editor",
 			"The currently selected section in the Chat Customizations editor"
 		],
 		"vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationManagement.contribution": [
@@ -29723,6 +29864,8 @@
 			"Browse the marketplace to discover and install plugins",
 			"by {0}",
 			"collapsed",
+			"Create Plugin",
+			"Create Plugin",
 			"Disabled",
 			"Disabled",
 			"Plugins that are installed but currently disabled. Enable them to use their capabilities.",
@@ -29774,6 +29917,8 @@
 			"{0} does not support images.",
 			"Vision is disabled by your organization.",
 			"This GIF was partially omitted - current frame will be sent.",
+			"Image not sent due to limit: {0}",
+			"This image was not sent because the maximum of {0} images per request was exceeded.",
 			"Instructions attachment, {0}",
 			"Attached Notebook output, {0}",
 			"Omitted this file: {0}",
@@ -29851,6 +29996,7 @@
 			"Show thinking in a fixed-height streaming panel that auto-scrolls; click header to expand to full height.",
 			"Controls how thinking is rendered.",
 			"When enabled, some agents run in a separate agent host process.",
+			"When enabled, logs all IPC traffic for each agent host to a dedicated output channel.",
 			"Paths must be relative or start with '~/'. Absolute paths and '\\' separators are not supported.",
 			"Specify location(s) of custom agent files (`*{0}`). [Learn More]({1}).\n\nRelative paths are resolved from the root folder(s) of your workspace.",
 			"Agent File Locations",
@@ -29865,6 +30011,13 @@
 			"Controls whether the Chat Customizations editor is enabled. When enabled, the gear icon in the Chat view opens the Customizations editor directly and additional actions are moved to the overflow menu. When disabled, the gear icon shows the legacy configuration dropdown.",
 			"Controls whether anonymous access is allowed in chat.",
 			"Controls whether the artifacts view is available in chat.",
+			"Controls how artifacts are populated. 'rules' extracts artifacts deterministically from the conversation. 'tool' lets the model set artifacts via a tool call.",
+			"Rules for extracting artifacts from written files by file path pattern. Maps glob patterns to group configuration.",
+			"Display name for the artifact group.",
+			"When true, show only the group header instead of individual items.",
+			"Rules for extracting artifacts from tool results by MIME type. Maps MIME type patterns (e.g. 'image/*') to group configuration.",
+			"Display name for the artifact group.",
+			"When true, show only the group header instead of individual items.",
 			"Controls whether the Autopilot mode is available in the permissions picker. When enabled, Autopilot auto-approves all tool calls and continues until the task is done.",
 			"Automatically skip question carousels by telling the agent that the user is not available and to use its best judgment. This is an advanced setting and can lead to unintended choices or actions based on incomplete context.",
 			"Enables checkpoints in chat. Checkpoints allow you to restore the chat to a previous state.",
@@ -29872,6 +30025,7 @@
 			"When applying edits, show a progress animation in the code block pill. If disabled, shows the progress percentage instead.",
 			"Show the context window usage indicator in the chat input.",
 			"Controls whether the harness selector (Local, Copilot CLI, Claude) is shown in the Chat Customizations editor sidebar. When disabled, the editor always shows all customizations without filtering.",
+			"When enabled, the Customizations management UI reads items from the session type's customizations provider instead of built-in discovery.",
 			"Enables chat participant autodetection for panel chat.",
 			"Disable and hide built-in AI features provided by GitHub Copilot, including chat and inline suggestions.",
 			"Delay after which changes made by chat are automatically accepted. Values are in seconds, `0` means disabled and `100` seconds is the maximum.",
@@ -29954,6 +30108,7 @@
 			"Controls whether CSS of the selected element will be added to the chat. {0} must be enabled.",
 			"Controls whether a screenshot of the selected element will be added to the chat. {0} must be enabled.",
 			"Controls whether elements can be sent to chat from the Simple Browser.",
+			"Controls whether to show a sign-in button in the title bar for users who are not signed in.",
 			"Controls whether anonymous users see the status widget in new chat sessions when rate limited.",
 			"Allow subagents to invoke subagents.",
 			"Controls whether subagents can invoke other subagents. When enabled, nesting is limited to a maximum depth of 5.",
@@ -30262,6 +30417,8 @@
 			"There is no checkpoint to restore.",
 			"Restores workspace and chat to this point",
 			"Restore to Last Checkpoint",
+			"Start Over",
+			"Clears the chat and undoes all changes",
 			"Undo Requests",
 			"All Session Changes",
 			"{0} (Snapshot)",
@@ -30512,13 +30669,15 @@
 			"Controls whether lightweight repository metadata (branch, commit, remotes) is captured when a chat request is submitted for internal diagnostics.",
 			"Chat Repository Info"
 		],
+		"vs/workbench/contrib/chat/browser/chatSessions/chatSessionDescription": [
+			"Thinking...",
+			"Waiting for confirmation: {0}"
+		],
 		"vs/workbench/contrib/chat/browser/chatSessions/chatSessionPickerActionItem": [
 			"Pick Option"
 		],
 		"vs/workbench/contrib/chat/browser/chatSessions/chatSessions.contribution": [
 			"Chat",
-			"Thinking...",
-			"Waiting for confirmation: {0}",
 			"A short name by which this command is referred to in the UI, e.g. `fix` or `explain` for commands that fix an issue or explain code. The name should be unique among the commands provided by this participant.",
 			"A description of this command.",
 			"Commands available for this chat session, which the user can invoke with a `/`.",
@@ -30549,6 +30708,7 @@
 			"Whether this chat session supports attaching source control changes.",
 			"Whether this chat session supports attaching symbols.",
 			"Whether this chat session supports attaching tools or tool references.",
+			"Whether to use ChatRequestTurn2 to populate built-in pickers such as the Agent and Model pickers.",
 			"Message text (supports markdown) to display in the chat welcome view for this session type.",
 			"Tips text (supports markdown and theme icons) to display in the chat welcome view for this session type.",
 			"Title text to display in the chat welcome view for this session type.",
@@ -30583,6 +30743,7 @@
 			"Retry",
 			"Code Review",
 			"Chat setup failed. Would you like to try again?",
+			"Sign In",
 			"Use AI Features with Copilot for free...",
 			"Sign in to use AI features..."
 		],
@@ -30736,7 +30897,8 @@
 			"Inline suggestions snoozed",
 			"Copilot disabled",
 			"Finish Setup",
-			"Signed out"
+			"Signed out",
+			"Sign In"
 		],
 		"vs/workbench/contrib/chat/browser/chatTipCatalog": [
 			"Enable [{0}](command:workbench.action.openSettings?%5B%22workbench.browser.enableChatTools%22%5D \"Open Settings\") to let the agent open and interact with pages in the Integrated Browser.",
@@ -30809,6 +30971,7 @@
 			"No plugins found in '{0}'. This does not appear to be a valid plugin marketplace.",
 			"Plugin source directory '{0}' is invalid for repository '{1}'.",
 			"Plugin source directory '{0}' not found in repository '{1}'.",
+			"Plugin '{0}' not found in '{1}'.",
 			"Plugin source '{0}' not found after cloning.",
 			"Select a plugin to install from '{0}'",
 			"Show Output",
@@ -30972,7 +31135,6 @@
 			"Move and/or Rename",
 			"Run in Chat View",
 			"Searching file system...",
-			"Built-in",
 			"Extensions",
 			"Organization",
 			"Plugins",
@@ -31127,9 +31289,13 @@
 			"View Extension"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatArtifactsWidget": [
-			"Artifacts",
+			"Clear all artifacts",
 			"{0} Artifacts",
-			"1 Artifact"
+			"{0} ({1} items)",
+			"1 Artifact",
+			"Save artifact",
+			"Save Artifact",
+			"Chat Artifacts"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/chatAgentCommandContentPart": [
 			"Rerun without {0}{1}"
@@ -31275,7 +31441,7 @@
 			"Pick folder to save resources"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/chatSubagentContentPart": [
-			"Running subagent...",
+			"Running subagent",
 			"Model: {0}",
 			"Subagent",
 			"Prompt",
@@ -31297,14 +31463,19 @@
 			"Made changes."
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/chatThinkingContentPart": [
+			"{0} deletions",
+			"1 deletion",
 			"Edited {0}",
 			"Edited file",
 			"Editing files",
 			"Finished Working",
-			"Finished with {0} step{1}",
+			"Finished with {0} steps",
+			"Finished with 1 step",
 			"Thinking",
 			"Thinking",
 			"Working",
+			"{0} insertions",
+			"1 insertion",
 			"{0}: {1}",
 			"{0}: ",
 			"Thinking",
@@ -31316,6 +31487,7 @@
 			"Considering",
 			"Analyzing",
 			"Evaluating",
+			"{0}, {1}, {2}",
 			"Processing",
 			"Preparing",
 			"Loading",
@@ -31391,6 +31563,10 @@
 			"Loading MCP App...",
 			"Error loading MCP App: {0}",
 			"Retry"
+		],
+		"vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatMissingSandboxDepsConfirmationSubPart": [
+			"Cancel",
+			"Install"
 		],
 		"vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatModifiedFilesConfirmationSubPart": [
 			"{0} files changed",
@@ -31492,22 +31668,13 @@
 			"Chat needs your input (1 question).",
 			"Selected \"{0}\"",
 			"Checkpoint Restored",
-			"Didn't follow instructions",
 			"Blocked {0}",
 			"Blocked by hook",
 			"Used {0}, but received a warning",
 			"Tool call received a warning",
-			"Incomplete code",
-			"Suggested incorrect code",
-			"Missing context",
-			"Offensive or unsafe",
-			"Other",
-			"Poorly written or formatted",
 			"Queued",
 			"Queued messages will be sent after the current request completes",
-			"Refused a valid request",
 			"Failed to render content",
-			"Report an issue",
 			"Click to Edit",
 			"Steering",
 			"Steering message will be sent after the next tool call happens",
@@ -31601,6 +31768,7 @@
 			"Error resolving prompt: {0}",
 			"Prompt Image",
 			"Prompt Resource",
+			"Attach a chat session",
 			"{0}: {1}"
 		],
 		"vs/workbench/contrib/chat/browser/widget/input/editor/chatInputEditorContrib": [
@@ -31654,7 +31822,8 @@
 			"Default Approvals",
 			"Use configured approval settings",
 			"Default Approvals",
-			"Copilot uses your configured settings"
+			"Copilot uses your configured settings",
+			"Learn more about permissions"
 		],
 		"vs/workbench/contrib/chat/browser/widget/input/sessionTargetPickerActionItem": [
 			"Learn about agent types...",
@@ -31730,6 +31899,7 @@
 			"True when a tool confirmation is present.",
 			"The type of the current editing request.",
 			"True when the installed chat extension is invalid and needs to be updated.",
+			"The chat item is the first request in the session.",
 			"The number of foreground chat sessions visible across chat surfaces.",
 			"True when the chat has custom agents available.",
 			"True when there are chat session providers with delegation support available.",
@@ -31872,6 +32042,18 @@
 			"New Chat",
 			"Report Issue"
 		],
+		"vs/workbench/contrib/chat/common/plugins/agentPluginServiceImpl": [
+			"Chat Plugins",
+			"Path to the agent plugin root directory relative to the extension root.",
+			"(Optional) A condition which must be true to enable this plugin.",
+			"Contributes agent plugins for chat.",
+			"Path",
+			"When",
+			"Extension '{0}' chatPlugins entry '{1}' resolves outside the extension.",
+			"Extension '{0}' chatPlugins entry '{1}' has an invalid when clause: '{2}'.",
+			"Extension '{0}' cannot register a chatPlugins entry without a path.",
+			"This plugin is provided by the extension '{0}'. Do you want to uninstall the extension?"
+		],
 		"vs/workbench/contrib/chat/common/promptSyntax/chatPromptFilesContribution": [
 			"Chat Agents",
 			"(Optional) Description of the entry.",
@@ -32008,7 +32190,6 @@
 			"The target to which the header attributes like tools apply to. Possible values are `github-copilot` and `vscode`.",
 			"The set of tools that the custom agent has access to.",
 			"Whether the agent can be selected and invoked by users in the UI.",
-			"Deprecated. Use user-invocable instead.",
 			"One or more glob pattern (separated by comma) that describe for which files the instructions apply to. Based on these patterns, the file is automatically included in the prompt, when the context contains a file that matches one or more of these patterns. Use `**` when you want this file to always be added.\nExample: `**/*.ts`, `**/*.js`, `client/**`",
 			"The description of the instruction file. It can be used to provide additional context or information about the instructions and is passed to the language model as part of the prompt.",
 			"One or more agents to exclude from using this instruction file.",
@@ -32026,8 +32207,7 @@
 			"License information for the skill.",
 			"Additional metadata for the skill.",
 			"The name of the skill.",
-			"Set to false to hide from the / menu. Use for background knowledge users should not invoke directly. Default: true.",
-			"Deprecated. Use user-invocable instead."
+			"Set to false to hide from the / menu. Use for background knowledge users should not invoke directly. Default: true."
 		],
 		"vs/workbench/contrib/chat/common/promptSyntax/languageProviders/promptHeaderAutocompletion": [
 			"Add Prompt Header",
@@ -32135,6 +32315,7 @@
 			"Unknown agent '{0}'. Available agents: {1}.",
 			"The 'agents' attribute must be an array.",
 			"When 'agents' and 'tools' are specified, the 'agent' tool must be included in the 'tools' attribute.",
+			"For agents to be used as subagent you also need to enable the 'chat.customAgentInSubagent.enabled' setting.",
 			"The 'applyTo' attribute must be a string.",
 			"The 'applyTo' attribute must be a valid glob pattern.",
 			"The 'argument-hint' attribute must be a string.",
@@ -32181,6 +32362,7 @@
 			"Hook event '{0}' must have an array of command objects as its value.",
 			"Attribute '{0}' is ignored when running locally in VS Code.",
 			"The 'infer' attribute is deprecated in favour of 'user-invocable' and 'disable-model-invocation'.",
+			"For agents to be used as subagent you also need to enable the 'chat.customAgentInSubagent.enabled' setting.",
 			"Invalid file reference '{0}'.",
 			"Invalid permission value '{0}' for scope '{1}'. Allowed values: {2}.",
 			"Missing required properties {0} in handoff object.",
@@ -32226,12 +32408,10 @@
 			"Unknown property '{0}' in hook matcher.",
 			"Unknown permission scope '{0}'. Valid scopes: {1}.",
 			"Unknown tool or toolset '{0}'.",
-			"The 'user-invocable' attribute must be 'true' or 'false'.",
-			"The 'user-invokable' attribute is deprecated. Use 'user-invocable' instead."
+			"The 'user-invocable' attribute must be 'true' or 'false'."
 		],
 		"vs/workbench/contrib/chat/common/promptSyntax/service/promptsServiceImpl": [
 			"Extension: {0}",
-			"Built-in",
 			"Plugin",
 			"Load Agents",
 			"Load Hooks",
@@ -35047,11 +35227,18 @@
 			"Open in Images Preview"
 		],
 		"vs/workbench/contrib/imageCarousel/browser/imageCarouselEditor": [
+			"Images Preview",
 			"{0} / {1}",
+			"Image",
+			"Video",
 			"Next image",
 			"No images to display",
 			"Previous image",
-			"Image {0} of {1}"
+			"{0} {1} of {2}: {3}",
+			"{0} {1} of {2}: {3}",
+			"Image {0} of {1}",
+			"Video {0} of {1}",
+			"Image thumbnails"
 		],
 		"vs/workbench/contrib/inlayHints/browser/inlayHintsAccessibilty": [
 			"Code with Inlay Hint Information",
@@ -39452,7 +39639,6 @@
 			"Object with environment variables that will be added to the VS Code process to be used by the terminal on macOS. Set to `null` to delete the environment variable.",
 			"Object with environment variables that will be added to the VS Code process to be used by the terminal on Windows. Set to `null` to delete the environment variable.",
 			"Whether to relaunch terminals automatically if extensions want to contribute to their environment and have not been interacted with yet.",
-			"Whether to elevate AI-contributed terminal profiles (for example Copilot CLI and Claude Agent) in the new terminal dropdown.",
 			"Scrolling speed multiplier when pressing `Alt`.",
 			"Controls whether the terminal, accessible buffer, or neither will be focused after `Terminal: Run Selected Text In Active Terminal` has been run.",
 			"Always focus the accessible buffer.",
@@ -39503,7 +39689,7 @@
 			"Determines whether or not shell integration is auto-injected to support features like enhanced command tracking and current working directory detection. \n\nShell integration works by injecting the shell with a startup script. The script gives VS Code insight into what is happening within the terminal.\n\nSupported shells:\n\n- Linux/macOS: bash, fish, pwsh, zsh\n - Windows: pwsh, git bash\n\nThis setting applies only when terminals are created, so you will need to restart your terminals for it to take effect.\n\n Note that the script injection may not work if you have custom arguments defined in the terminal profile, have enabled {1}, have a [complex bash `PROMPT_COMMAND`](https://code.visualstudio.com/docs/editor/integrated-terminal#_complex-bash-promptcommand), or other unsupported setup. To disable decorations, see {0}",
 			"Controls whether to report the shell environment, enabling its use in features such as {0}. This may cause a slowdown when printing your shell's prompt.",
 			"When shell integration is enabled, enables quick fixes for terminal commands that appear as a lightbulb or sparkle icon to the left of the prompt.",
-			"Configures the duration in milliseconds to wait for shell integration after launch before declaring it's not there. Set to {0} to skip the wait entirely. The default value {1} uses a variable wait time based on whether shell integration injection is enabled and whether it's a remote window. Values between 1 and 499 are clamped to 500ms. Consider setting this to {0} if you intentionally disabled shell integration, or a large value if your shell starts very slowly.",
+			"Configures the duration in milliseconds to wait for shell integration after launch before declaring it's not there. The default value {0} uses a variable wait time based on whether shell integration injection is enabled and whether it's a remote window. Values between 1 and 499 are clamped to 500ms. Consider setting this to a large value if your shell starts very slowly.",
 			"Controls whether to show the alert \"The terminal process terminated with exit code\" when exit code is non-zero.",
 			"Controls whether the terminal will scroll using an animation.",
 			"Controls the working directory a split terminal starts with.",
@@ -39775,15 +39961,26 @@
 			"Running `{0}` in background",
 			"Running `{0}` in sandbox",
 			"Running `{0}` in sandbox in background",
+			"Cancel",
+			"Sandbox dependency installation was cancelled by the user.",
+			"Sandbox dependency installation failed (exit code {0}). The command was not executed.",
+			"Install",
+			"The following dependencies required for sandboxed execution are not installed: {0}. Would you like to install them?",
+			"Missing Sandbox Dependencies",
+			"Could not determine whether sandbox dependency installation succeeded. The command was not executed.",
 			"Run `{0}` command in `{1}`?",
 			"Run `{0}` command in `{1}` in background?",
 			"Run `{0}` command in `{1}` in background within `{2}`?",
+			"Run command in `{0}` in background within `{1}`?",
+			"Run command in `{0}` in background?",
 			"Run `{0}` command in `{1}` within `{2}`?",
+			"Run command in `{0}` within `{1}`?",
+			"Run command in `{0}`?",
 			"Running `{0}`",
 			"Running `{0}` in background",
 			"Running command",
-			"Run `{0}` command outside the sandbox?",
-			"Run `{0}` command outside the sandbox in background?",
+			"Run `{0}` command outside the [sandbox]({1})?",
+			"Run `{0}` command outside the [sandbox]({1}) in background?",
 			"Explanation: {0}\n\nGoal: {1}\n\nReason for leaving the sandbox: {2}",
 			"The model indicated that this command needs unsandboxed access.",
 			"The command opened the alternate buffer.",
@@ -39832,6 +40029,23 @@
 			"Task `{0}` failed with exit code {1}."
 		],
 		"vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalChatAgentToolsConfiguration": [
+			"Controls whether agent mode uses sandboxing to restrict what tools can do. When enabled, tools like the terminal are run in a sandboxed environment to limit access to the system.",
+			"Note: this setting is applicable only when {0} is enabled. Controls file system access in sandbox on Linux. Paths do not support glob patterns, only literal paths (ex: ./src/, ~/.ssh, .env). **bubblewrap** and **socat** should be installed for this setting to work.",
+			"Array of paths to allow write access. Leave empty to disallow all writes.",
+			"Array of paths to deny read access. Leave empty to allow reading all paths.",
+			"Array of paths to deny write access within allowed paths (takes precedence over allowWrite).",
+			"Note: this setting is applicable only when {0} is enabled. Controls file system access in sandbox on macOS. Paths also support git-style glob patterns(ex: *.ts, ./src, ./src/**/*.ts, file?.txt).",
+			"Array of paths to allow write access. Leave empty to disallow all writes.",
+			"Array of paths to deny read access. Leave empty to allow reading all paths.",
+			"Array of paths to deny write access within allowed paths (takes precedence over allowWrite).",
+			"Note: this setting is applicable only when {0} is enabled. Allowed domains for network access in sandbox. Supports wildcards like {1} and an empty list means no network access.",
+			"Note: this setting is applicable only when {0} is enabled. Array of denied domains for network access in sandbox (checked first, takes precedence over {1}).",
+			"Use {0} instead",
+			"Use {0} instead",
+			"Use {0} instead",
+			"This setting has been split into {0} and {1}.",
+			"Use {0} instead",
+			"Use {0} instead",
 			"Note that there's a default set of rules to allow and also deny commands. Consider setting {0} to {1} to ignore all default rules to ensure there are no conflicts with your own rules. Do this at your own risk, the default denial rules are designed to protect you against running dangerous commands.",
 			"Use {0} instead",
 			"An object can be used to match against the full command line instead of matching sub-commands and inline commands, for example {0}. In order to be auto approved _both_ the sub-command and command line must not be explicitly denied, then _either_ all sub-commands or command line needs to be approved.",
@@ -39880,23 +40094,13 @@
 			"The terminal profile to use on Linux for chat agent's run in terminal tool.",
 			"The terminal profile to use on macOS for chat agent's run in terminal tool.",
 			"A path to a shell executable.",
-			"The terminal profile to use on Windows for chat agent's run in terminal tool.",
-			"Controls whether to run commands in a sandboxed terminal for the run in terminal tool.",
-			"Note: this setting is applicable only when {0} is enabled. Controls file system access in the terminal sandbox on Linux. Paths do not support glob patterns, only literal paths (ex: ./src/, ~/.ssh, .env). **bubblewrap** and **socat** should be installed for this setting to work.",
-			"Array of paths to allow write access. Leave empty to disallow all writes.",
-			"Array of paths to deny read access. Leave empty to allow reading all paths.",
-			"Array of paths to deny write access within allowed paths (takes precedence over allowWrite).",
-			"Note: this setting is applicable only when {0} is enabled. Controls file system access in the terminal sandbox on macOS. Paths also support git-style glob patterns(ex: *.ts, ./src, ./src/**/*.ts, file?.txt).",
-			"Array of paths to allow write access. Leave empty to disallow all writes.",
-			"Array of paths to deny read access. Leave empty to allow reading all paths.",
-			"Array of paths to deny write access within allowed paths (takes precedence over allowWrite).",
-			"Note: this setting is applicable only when {0} is enabled. Allowed domains for network access in the terminal sandbox. Supports wildcards like {1} and an empty list means no network access.",
-			"Note: this setting is applicable only when {0} is enabled. When enabled, the Trusted Domains list is included in the allowed domains for network access in the terminal sandbox.",
-			"Note: this setting is applicable only when {0} is enabled. Array of denied domains for network access in the terminal sandbox (checked first, takes precedence over {1}).",
-			"This setting has been split into {0}, {1}, and {2}."
+			"The terminal profile to use on Windows for chat agent's run in terminal tool."
 		],
 		"vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalSandboxService": [
-			"Delete Files in Sandbox Temp Dir"
+			"Delete Files in Sandbox Temp Dir",
+			"Focus Terminal",
+			"Installing missing sandbox dependencies may prompt for your sudo password. Select Focus Terminal to type it in the terminal.",
+			"The terminal is awaiting input."
 		],
 		"vs/workbench/contrib/terminalContrib/clipboard/browser/terminal.clipboard.contribution": [
 			"Copy and Clear Selection",
@@ -41797,8 +42001,11 @@
 			"The Source Control artifact group context menu",
 			"The Source Control inline change menu",
 			"Actions in the chat context usage details popup.",
+			"The create button in the Chat Customizations management editor.",
 			"Submenu for apply actions in the Chat Editing session changes toolbar.",
 			"The Chat Editing widget toolbar menu for session changes.",
+			"The Chat Editing widget toolbar menu for session changes.",
+			"The Chat Editing widget toolbar menu for session title.",
 			"The inline gutter menu in the chat editor.",
 			"The Chat Multi-Diff context menu.",
 			"The Chat new session menu.",
@@ -41953,6 +42160,7 @@
 			"Learn More",
 			"OK",
 			"Copilot Business",
+			"Copilot EDU",
 			"Copilot Enterprise",
 			"Copilot Free",
 			"Copilot Pro",
@@ -42681,8 +42889,9 @@
 		],
 		"vs/workbench/services/themes/browser/workbenchThemeService": [
 			"Unable to load {0}: {1}",
-			"New default themes are available for VS Code.",
-			"Try Them Out"
+			"No Thanks",
+			"VS Code has a new default theme: '{0}'.",
+			"Keep It"
 		],
 		"vs/workbench/services/themes/common/colorExtensionPoint": [
 			"Colors",

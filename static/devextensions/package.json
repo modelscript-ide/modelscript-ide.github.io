@@ -1,7 +1,7 @@
 {
   "name": "modelscript",
   "displayName": "ModelScript — Modelica for VS Code",
-  "version": "0.0.3",
+  "version": "0.0.18",
   "description": "Complete Modelica development environment — diagram editing, simulation, scripting, notebooks, and bundled MSL. No external tools required.",
   "categories": [
     "Programming Languages",
@@ -38,6 +38,11 @@
     "watch": "webpack --watch"
   },
   "contributes": {
+    "breakpoints": [
+      {
+        "language": "modelica"
+      }
+    ],
     "commands": [
       {
         "command": "modelscript.openDiagram",
@@ -50,6 +55,11 @@
         "icon": "$(go-to-file)"
       },
       {
+        "command": "modelscript.openCadViewer",
+        "title": "ModelScript: Open 3D Viewer",
+        "icon": "$(play-circle)"
+      },
+      {
         "command": "modelscript.runSimulation",
         "title": "ModelScript: Run Simulation",
         "icon": "$(play)"
@@ -58,10 +68,6 @@
         "command": "modelscript.addToDiagram",
         "title": "ModelScript: Add to Diagram",
         "icon": "$(add)"
-      },
-      {
-        "command": "modelscript.openProjectFile",
-        "title": "ModelScript: Open File"
       },
       {
         "command": "modelscript.autoLayout",
@@ -107,6 +113,21 @@
         "command": "modelscript.cosimRefresh",
         "title": "ModelScript: Refresh Co-Simulation",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "modelscript.showClassHierarchy",
+        "title": "ModelScript: Show Class Hierarchy",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "modelscript.analyzeBlt",
+        "title": "ModelScript: Analyze Equation System",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "modelscript.showComponentTree",
+        "title": "ModelScript: Show Component Tree",
+        "icon": "$(list-tree)"
       }
     ],
     "configuration": [
@@ -160,6 +181,55 @@
           }
         ],
         "priority": "default"
+      },
+      {
+        "viewType": "modelscript.sspViewer",
+        "displayName": "SSP Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.ssp"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "modelscript",
+        "label": "ModelScript Simulator",
+        "program": "./dist/browserClientMain.js",
+        "runtime": "vscode",
+        "languages": [
+          "modelica"
+        ],
+        "configurationAttributes": {
+          "launch": {
+            "required": [
+              "program"
+            ],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "Absolute path to the Modelica source file.",
+                "default": "${file}"
+              },
+              "stopOnEntry": {
+                "type": "boolean",
+                "description": "Automatically stop after launch.",
+                "default": true
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "modelscript",
+            "request": "launch",
+            "name": "Debug ModelScript",
+            "program": "${file}",
+            "stopOnEntry": true
+          }
+        ]
       }
     ],
     "grammars": [
@@ -294,12 +364,7 @@
       "editor/title": [
         {
           "command": "modelscript.openDiagram",
-          "when": "editorLangId == modelica",
-          "group": "navigation"
-        },
-        {
-          "command": "modelscript.runSimulation",
-          "when": "editorLangId == modelica",
+          "when": "editorLangId == modelica && activeCustomEditorId != modelscript.diagram",
           "group": "navigation"
         },
         {
@@ -308,8 +373,8 @@
           "group": "navigation"
         },
         {
-          "command": "modelscript.autoLayout",
-          "when": "activeCustomEditorId == modelscript.diagram",
+          "command": "modelscript.runSimulation",
+          "when": "editorLangId == modelica || activeCustomEditorId == modelscript.diagram",
           "group": "navigation"
         }
       ],
@@ -370,11 +435,6 @@
     "views": {
       "explorer": [
         {
-          "id": "modelscript.projectTree",
-          "name": "Modelica Project",
-          "visibility": "visible"
-        },
-        {
           "id": "modelscript.libraryTree",
           "name": "Modelica Libraries",
           "visibility": "visible"
@@ -418,10 +478,6 @@
     },
     "viewsWelcome": [
       {
-        "view": "modelscript.projectTree",
-        "contents": "No Modelica files found in the workspace."
-      },
-      {
         "view": "modelscript.libraryTree",
         "contents": "Open a Modelica file to browse libraries."
       },
@@ -441,11 +497,20 @@
     "@antv/x6-plugin-selection": "^2.2.2",
     "@mlc-ai/web-llm": "*",
     "@modelscript/lsp": "*",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@vscode/debugadapter": "^1.68.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "three": "^0.183.2",
     "vscode-languageclient": "^9.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.183.1",
     "@types/vscode": "^1.100.0",
     "@vscode/test-web": "^0.0.80",
     "@vscode/vsce": "^3.7.1",
